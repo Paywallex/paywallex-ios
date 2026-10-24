@@ -1,0 +1,10 @@
+# Construit le kit pour iPhone (simulateur) à chaque envoi. Signé : Superagent.
+name: build
+on: [push, pull_request]
+jobs:
+  ios:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - name: Construire pour iOS
+        run: xcodebuild -scheme Paywallex -destination 'generic/platform=iOS Simulator' -skipPackagePluginValidation build | tail -20
