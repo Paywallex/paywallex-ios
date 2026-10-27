@@ -24,7 +24,7 @@ Créez le client, puis lancez le paiement :
 import Paywallex
 
 let paywallex = Paywallex(appKey: "pxa_test_…",
-                          baseUrl: URL(string: "https://api.paywallx.xyz")!,
+                          baseUrl: URL(string: "https://api.paywallex.app")!,
                           returnUrl: URL(string: "monapp://paiement")!)
 
 let result = try await paywallex.pay(amount: "5000", reference: "CMD-1042", title: "Commande 1042")
